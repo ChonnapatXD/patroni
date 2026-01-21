@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.16.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "elysia": "^1.4.22",
+    "ioredis": "^5.9.2",
+    "pg": "^8.17.1"
+  }
+}

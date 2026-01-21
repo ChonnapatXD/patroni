@@ -7,7 +7,6 @@
 # $ docker-compose up -d
 # You can read more about it in the:
 # https://github.com/patroni/patroni/blob/master/docker/README.md
-version: "2"
 
 networks:
     demo:
@@ -72,6 +71,7 @@ services:
         container_name: demo-patroni2
         environment:
             <<: *haproxy_env
+
             PATRONI_NAME: patroni2
 
     patroni3:
@@ -83,3 +83,12 @@ services:
         environment:
             <<: *haproxy_env
             PATRONI_NAME: patroni3
+
+    redis:
+        image: redis:7
+        container_name: demo-redis
+        hostname: redis
+        networks: [ demo ]
+        ports:
+            - "6379:6379"
+        command: redis-server --appendonly yes

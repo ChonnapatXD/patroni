@@ -1,4 +1,4 @@
-#!/bin/sh
+s#!/bin/sh
 
 if [ -f /a.tar.xz ]; then
     echo "decompressing image..."
